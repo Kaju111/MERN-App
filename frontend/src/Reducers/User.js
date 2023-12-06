@@ -42,5 +42,44 @@ export const userReducer = createReducer(initialState, (builder) => {
       state.loading = false;
       state.error = action.payload;
       state.isAuthenticated = false;
+    })
+    .addCase("clearErrors", (state) => {
+      state.error = null;
+    });
+});
+
+export const postOfFollowingReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase("postOfFollowingRequest", (state) => {
+      state.loading = true;
+    })
+    .addCase("postOfFollowingSuccess", (state, action) => {
+      state.loading = false;
+      state.post = action.payload;
+    })
+    .addCase("postOfFollowingFailure", (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    })
+    .addCase("clearErrors", (state) => {
+      state.error = null;
+    });
+});
+
+export const allUsersReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase("allUsersRequest", (state) => {
+      state.loading = true;
+    })
+    .addCase("allUsersSuccess", (state, action) => {
+      state.loading = false;
+      state.user = action.payload;
+    })
+    .addCase("allUsersFailure", (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    })
+    .addCase("clearErrors", (state) => {
+      state.error = null;
     });
 });
