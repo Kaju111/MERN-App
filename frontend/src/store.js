@@ -5,14 +5,18 @@ import {
   //   userProfileReducer,
   userReducer,
 } from "./Reducers/User";
-// import { likeReducer, myPostsReducer, userPostsReducer } from "./Reducers/Post";
+import {
+  likeReducer,
+  //  myPostsReducer,
+  // userPostsReducer
+} from "./Reducers/Post";
 
 const store = configureStore({
   reducer: {
     user: userReducer,
     postOfFollowing: postOfFollowingReducer,
     allUsers: allUsersReducer,
-    // like: likeReducer,
+    like: likeReducer,
     // myPosts: myPostsReducer,
     // userProfile: userProfileReducer,
     // userPosts: userPostsReducer,

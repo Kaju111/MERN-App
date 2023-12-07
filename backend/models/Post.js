@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
   caption: String,
+
   image: {
     public_id: String,
     url: String,
@@ -12,7 +13,7 @@ const postSchema = new mongoose.Schema({
     ref: "User",
   },
 
-  createAt: {
+  createdAt: {
     type: Date,
     default: Date.now,
   },
@@ -22,7 +23,8 @@ const postSchema = new mongoose.Schema({
       ref: "User",
     },
   ],
-  Comments: [
+
+  comments: [
     {
       user: {
         type: mongoose.Schema.Types.ObjectId,

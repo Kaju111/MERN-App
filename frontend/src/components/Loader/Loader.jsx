@@ -1,7 +1,11 @@
 import React from "react";
-
+import "./Loader.css";
 const Loader = () => {
-  return <div>Loading</div>;
+  return (
+    <div className="loadingPage">
+      <div className="loadingCircle"></div>
+    </div>
+  );
 };
 
 export default Loader;

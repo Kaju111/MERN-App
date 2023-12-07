@@ -7,8 +7,6 @@
     justify-content: center;
     padding: 2vmax;
     box-sizing: border-box;
-
-
 }
 
 .loginForm {
@@ -40,7 +38,6 @@
     color: rgba(0, 0, 0, 0.342);
     margin: 2vmax;
 }
-
 
 @media screen and (max-width: 600px) {
     .loginForm {

@@ -4,7 +4,7 @@ import User from "../User/User";
 import Post from "../Post/Post";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllUsers, getFollowingPosts } from "../../Action/User";
+import { getAllUsers, getFollowingPosts } from "../../Actions/User";
 import Loader from "../../components/Loader/Loader";
 import { Typography } from "@mui/material";
 
@@ -52,6 +52,7 @@ const Home = () => {
         {users && users.length > 0 ? (
           users.map((user) => (
             <User
+              key={user._id}
               userId={"user._id"}
               name={"user.name"}
               avatar={user.avatar.url}

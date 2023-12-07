@@ -43,6 +43,21 @@ export const userReducer = createReducer(initialState, (builder) => {
       state.error = action.payload;
       state.isAuthenticated = false;
     })
+
+    .addCase("LogoutUserRequest", (state) => {
+      state.loading = true;
+    })
+    .addCase("LogoutUserSuccess", (state) => {
+      state.loading = false;
+      state.user = null;
+      state.isAuthenticated = false;
+    })
+    .addCase("LogoutUserFailure", (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+      state.isAuthenticated = true;
+    })
+
     .addCase("clearErrors", (state) => {
       state.error = null;
     });
@@ -76,6 +91,24 @@ export const allUsersReducer = createReducer(initialState, (builder) => {
       state.user = action.payload;
     })
     .addCase("allUsersFailure", (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    })
+    .addCase("clearErrors", (state) => {
+      state.error = null;
+    });
+});
+
+export const userProfileReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase("userProfileRequest", (state) => {
+      state.loading = true;
+    })
+    .addCase("userProfileSuccess", (state, action) => {
+      state.loading = false;
+      state.user = action.payload;
+    })
+    .addCase("userProfileFailure", (state, action) => {
       state.loading = false;
       state.error = action.payload;
     })
