@@ -70,7 +70,7 @@ export const postOfFollowingReducer = createReducer(initialState, (builder) => {
     })
     .addCase("postOfFollowingSuccess", (state, action) => {
       state.loading = false;
-      state.post = action.payload;
+      state.posts = action.payload;
     })
     .addCase("postOfFollowingFailure", (state, action) => {
       state.loading = false;
@@ -88,7 +88,7 @@ export const allUsersReducer = createReducer(initialState, (builder) => {
     })
     .addCase("allUsersSuccess", (state, action) => {
       state.loading = false;
-      state.user = action.payload;
+      state.users = action.payload;
     })
     .addCase("allUsersFailure", (state, action) => {
       state.loading = false;

@@ -54,7 +54,7 @@ exports.deletePost = async (req, res) => {
 
     await cloudinary.v2.uploader.destroy(post.image.public_id);
 
-    await post.remove();
+    await Post.findByIdAndDelete(req.params.id);
 
     const user = await User.findById(req.user._id);
 
